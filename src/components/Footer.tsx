@@ -12,25 +12,14 @@ export default function Footer() {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col items-center mb-16">
-          <Link href="/" className="flex items-center gap-4 mb-6 group">
-            <div className="relative w-14 h-14">
-              <svg viewBox="0 0 100 100" className="w-full h-full drop-shadow-lg">
-                <circle cx="50" cy="50" r="48" fill="#001a3d" stroke="#b8860b" strokeWidth="4" />
-                <circle cx="50" cy="50" r="42" fill="none" stroke="#8b0000" strokeWidth="2" strokeDasharray="4 2" />
-                <path d="M50 20 L60 40 L40 40 Z" fill="#b8860b" />
-                <text x="50" y="65" textAnchor="middle" fill="#b8860b" fontWeight="900" fontSize="24" fontFamily="serif">UK</text>
-                <path d="M50 85 L40 75 Q50 70 60 75 Z" fill="#b8860b" />
-              </svg>
-            </div>
-            <div className="flex flex-col leading-none font-serif">
-              <div className="flex items-baseline">
-                <span className="text-3xl font-bold text-[#001a3d]">uk</span>
-                <span className="text-3xl font-bold text-[#8b0000]">casino</span>
-                <span className="text-3xl font-bold text-[#b8860b]">house</span>
-              </div>
-              <span className="text-[10px] tracking-[0.4em] text-white/20 font-medium uppercase mt-1 ml-1">
-                {domain}
-              </span>
+          <Link href="/" className="flex items-center mb-6 group">
+            <div className="relative w-[350px] h-[70px]">
+              <Image 
+                src="/logo.png" 
+                alt="UK Casino House" 
+                fill 
+                className="object-contain"
+              />
             </div>
           </Link>
           <p className="text-white/40 text-sm max-w-md text-center leading-relaxed">
