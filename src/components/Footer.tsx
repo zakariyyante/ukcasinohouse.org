@@ -32,9 +32,9 @@ export default function Footer() {
             <h4 className="text-gold font-bold uppercase tracking-[0.2em] text-xs mb-8">Navigation</h4>
             <ul className="space-y-4">
               <li><Link href="/" className="text-white/40 hover:text-white transition-colors text-sm font-medium">Home</Link></li>
-              <li><Link href="#brands" className="text-white/40 hover:text-white transition-colors text-sm font-medium">Elite Brands</Link></li>
-              <li><Link href="#guide" className="text-white/40 hover:text-white transition-colors text-sm font-medium">Casino Guide</Link></li>
-              <li><Link href="#about" className="text-white/40 hover:text-white transition-colors text-sm font-medium">About Us</Link></li>
+              <li><Link href="/#brands" className="text-white/40 hover:text-white transition-colors text-sm font-medium">Elite Brands</Link></li>
+              <li><Link href="/about" className="text-white/40 hover:text-white transition-colors text-sm font-medium">About Us</Link></li>
+              <li><Link href="/contact" className="text-white/40 hover:text-white transition-colors text-sm font-medium">Contact Us</Link></li>
             </ul>
           </div>
           <div>
@@ -43,6 +43,7 @@ export default function Footer() {
               <li><Link href="/privacy" className="text-white/40 hover:text-white transition-colors text-sm font-medium">Privacy Policy</Link></li>
               <li><Link href="/terms" className="text-white/40 hover:text-white transition-colors text-sm font-medium">Terms of Service</Link></li>
               <li><Link href="/cookies" className="text-white/40 hover:text-white transition-colors text-sm font-medium">Cookie Policy</Link></li>
+              <li><Link href="/disclosure" className="text-white/40 hover:text-white transition-colors text-sm font-medium">Affiliate Disclosure</Link></li>
             </ul>
           </div>
           <div className="col-span-2">

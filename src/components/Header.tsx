@@ -19,8 +19,8 @@ export default function Header() {
   const navLinks = [
     { name: "Collection", href: "#brands" },
     { name: "The Guide", href: "#guide" },
-    { name: "Heritage", href: "#about" },
-    { name: "Concierge", href: "#contact" },
+    { name: "Heritage", href: "/about" },
+    { name: "Concierge", href: "/contact" },
   ];
 
   return (
