@@ -6,14 +6,17 @@
   --color-card-bg: var(--card-bg);
   --color-primary: var(--primary);
   --color-accent: var(--accent);
+  --color-gold: var(--gold);
+  --font-serif: var(--font-playfair);
 }
 
 :root {
-  --background: #0f051d;
+  --background: #000a1a;
   --foreground: #ffffff;
-  --card-bg: #1a0b2e;
-  --primary: #ff8c00;
-  --accent: #ffd700;
+  --card-bg: #00152b;
+  --primary: #8b0000; /* Deep Red */
+  --accent: #001a3d;  /* Dark Navy */
+  --gold: #b8860b;    /* Gold/Bronze */
 }
 
 body {
@@ -22,22 +25,26 @@ body {
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
 
+h1, h2, h3, h4, .serif-font {
+  font-family: var(--font-playfair), serif;
+}
+
 @layer utilities {
   .gold-text {
-    @apply bg-clip-text text-transparent bg-linear-to-r from-yellow-400 via-yellow-200 to-yellow-500;
+    @apply bg-clip-text text-transparent bg-linear-to-r from-[#b8860b] via-[#ffd700] to-[#8b4513];
   }
 
   .casino-card-bg {
-    @apply bg-[var(--card-bg)] border border-white/10 rounded-xl overflow-hidden;
+    @apply bg-[var(--card-bg)] border border-white/5 rounded-xl overflow-hidden;
   }
 
   .felt-texture {
-    background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
+    background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.02) 1px, transparent 0);
     background-size: 24px 24px;
   }
 
   .casino-glow {
-    box-shadow: 0 0 20px rgba(255, 140, 0, 0.2);
+    box-shadow: 0 0 30px rgba(184, 134, 11, 0.15);
   }
 
   .gold-shimmer {
@@ -56,12 +63,12 @@ body {
       to bottom right,
       rgba(255, 255, 255, 0) 0%,
       rgba(255, 255, 255, 0) 40%,
-      rgba(255, 255, 255, 0.4) 50%,
+      rgba(255, 255, 255, 0.2) 50%,
       rgba(255, 255, 255, 0) 60%,
       rgba(255, 255, 255, 0) 100%
     );
     transform: rotate(45deg);
-    animation: shimmer 3s infinite;
+    animation: shimmer 4s infinite;
   }
 
   @keyframes shimmer {

@@ -2,63 +2,68 @@ import Link from "next/link";
 
 export default function AboutSection() {
   return (
-    <section id="about" className="py-20 bg-black/20">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-5xl font-black text-white mb-12 text-center uppercase tracking-tight">
-          How We Rate <span className="text-primary">Casino</span> Sites
-        </h2>
+    <section id="about" className="py-24 bg-black/40 relative">
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 uppercase tracking-tight font-serif">
+            The <span className="text-gold">Gold Standard</span> of Reviews
+          </h2>
+          <p className="text-white/40 max-w-2xl mx-auto font-medium">
+            Our commitment to excellence ensures you only access the most reliable and rewarding casino platforms in the United Kingdom.
+          </p>
+        </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           {/* Why Our Reviews Stand Out */}
-          <div className="p-8 rounded-3xl bg-white/5 border border-white/10 felt-texture">
-            <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-              <span className="text-primary">♠️</span> Why Our Reviews Stand Out
+          <div className="p-10 rounded-[2rem] bg-white/[0.02] border border-white/5 felt-texture hover:border-gold/20 transition-colors duration-500">
+            <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-4 font-serif">
+              <span className="text-gold">⚜️</span> Our Vetting Process
             </h3>
-            <ul className="space-y-4">
+            <ul className="space-y-6">
               {[
-                "Licensed by the UK Gambling Commission (UKGC)",
-                "Rigorous security and SSL encryption testing",
-                "Verified payout speeds and withdrawal limits",
-                "Real player feedback and community reputation",
-                "Exclusive bonus terms and wagering transparency",
+                "Full UK Gambling Commission (UKGC) Compliance",
+                "Advanced Security & SSL Encryption Verification",
+                "Audited Payout Ratios & Withdrawal Efficiency",
+                "Premium Player Experience & VIP Program Analysis",
+                "Transparent Bonus Terms & Fair Wagering Policies",
               ].map((point, i) => (
-                <li key={i} className="flex items-start gap-3 text-white/70">
-                  <span className="text-primary mt-1">✔️</span>
-                  <span className="font-medium">{point}</span>
+                <li key={i} className="flex items-start gap-4 text-white/60 group">
+                  <span className="text-gold mt-1 group-hover:scale-125 transition-transform">✦</span>
+                  <span className="font-medium group-hover:text-white/90 transition-colors">{point}</span>
                 </li>
               ))}
             </ul>
           </div>
 
           {/* Responsible Gambling */}
-          <div className="p-8 rounded-3xl bg-linear-to-br from-red-900/20 to-black border border-red-500/20">
-            <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-              <span className="text-red-500">🛡️</span> Responsible Gambling
+          <div className="p-10 rounded-[2rem] bg-linear-to-br from-[#8b0000]/10 to-transparent border border-[#8b0000]/20 hover:border-[#8b0000]/40 transition-colors duration-500">
+            <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-4 font-serif">
+              <span className="text-[#8b0000]">🛡️</span> Player Protection
             </h3>
-            <p className="text-white/60 mb-6 leading-relaxed">
-              At UK Casino House, we are committed to promoting safe and responsible gambling. Gambling should be a form of entertainment, not a way to make money. If you feel you are losing control, please reach out to the following organizations:
+            <p className="text-white/50 mb-8 leading-relaxed font-medium">
+              We prioritize your well-being. Gambling should remain a sophisticated form of entertainment. If you require assistance or wish to implement self-exclusion, please utilize these professional resources:
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <Link 
                 href="https://www.gamstop.co.uk" 
                 target="_blank"
-                className="p-4 rounded-xl bg-white/5 border border-white/10 text-center hover:bg-white/10 transition-colors"
+                className="p-5 rounded-2xl bg-white/[0.03] border border-white/5 text-center hover:bg-white/[0.06] transition-all group"
               >
-                <div className="font-bold text-white">GAMSTOP</div>
-                <div className="text-xs text-white/40">Self-Exclusion Scheme</div>
+                <div className="font-bold text-white group-hover:text-gold transition-colors">GAMSTOP</div>
+                <div className="text-[10px] text-white/30 uppercase tracking-widest mt-1">Self-Exclusion</div>
               </Link>
               <Link 
                 href="https://www.gamcare.org.uk" 
                 target="_blank"
-                className="p-4 rounded-xl bg-white/5 border border-white/10 text-center hover:bg-white/10 transition-colors"
+                className="p-5 rounded-2xl bg-white/[0.03] border border-white/5 text-center hover:bg-white/[0.06] transition-all group"
               >
-                <div className="font-bold text-white">GamCare</div>
-                <div className="text-xs text-white/40">Support & Advice</div>
+                <div className="font-bold text-white group-hover:text-gold transition-colors">GamCare</div>
+                <div className="text-[10px] text-white/30 uppercase tracking-widest mt-1">Expert Support</div>
               </Link>
             </div>
-            <div className="mt-6 text-center">
-              <p className="text-sm font-bold text-white/80">National Gambling Helpline</p>
-              <p className="text-2xl font-black text-primary">0808 8020 133</p>
+            <div className="mt-10 p-6 rounded-2xl bg-[#8b0000]/5 border border-[#8b0000]/10 text-center">
+              <p className="text-xs font-bold text-white/40 uppercase tracking-[0.2em] mb-2">National Gambling Helpline</p>
+              <p className="text-3xl font-bold text-gold font-serif tracking-tighter">0808 8020 133</p>
             </div>
           </div>
         </div>
