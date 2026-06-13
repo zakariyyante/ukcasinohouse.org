@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Brand } from "@/app/data/brands";
-import { track } from "@vercel/analytics/next";
+import { track } from "@vercel/analytics";
 
 interface BrandCardProps {
   brand: Brand;
