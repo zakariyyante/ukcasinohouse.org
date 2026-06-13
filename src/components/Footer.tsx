@@ -55,11 +55,10 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col items-center gap-10">
-          <div className="flex flex-wrap justify-center items-center gap-10 opacity-30 grayscale hover:grayscale-0 transition-all duration-700">
-            <Image src="/18plus.svg" alt="18+" width={36} height={36} />
-            <Image src="/ukgc.svg" alt="UKGC" width={90} height={36} />
-            <Image src="/gamstop.svg" alt="GAMSTOP" width={110} height={36} />
-            <Image src="/begambleaware.svg" alt="BeGambleAware" width={130} height={36} />
+          <div className="flex flex-wrap justify-center items-center gap-10 opacity-50 grayscale hover:grayscale-0 transition-all duration-700">
+            <Image src="/gambleaware.png" alt="BeGambleAware" width={160} height={40} className="h-8 w-auto object-contain" />
+            <Image src="/gamcare.png" alt="GamCare" width={120} height={40} className="h-8 w-auto object-contain" />
+            <Image src="/gamestop.png" alt="GAMSTOP" width={120} height={40} className="h-8 w-auto object-contain" />
           </div>
           
           <div className="flex flex-col items-center gap-2">
