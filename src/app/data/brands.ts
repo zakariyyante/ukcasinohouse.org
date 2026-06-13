@@ -11,6 +11,17 @@ export interface Brand {
 
 export const brands: Brand[] = [
   {
+    id: "bananzia",
+    name: "Bananzia",
+    logo: "/brands/bananzia.svg",
+    rating: 9.2,
+    bonus: "Casino Welcome Bonus 300% up to £3000 + 300 FS!",
+    url: "https://bestcpa.online/click?o=510&a=36&link_id=818&sub_id1=Bananzia-SL2UK1&aff_click_id=",
+    isMobile: true,
+    votes: 1340,
+  },
+  
+  {
     id: "spinpolo",
     name: "SpinPolo",
     logo: "/brands/spinpolo.webp",
@@ -21,16 +32,7 @@ export const brands: Brand[] = [
     votes: 1105,
   },
   
-  {
-    id: "bananzia",
-    name: "Bananzia",
-    logo: "/brands/bananzia.svg",
-    rating: 9.2,
-    bonus: "Casino Welcome Bonus 300% up to £3000 + 300 FS!",
-    url: "https://bestcpa.online/click?o=510&a=36&link_id=818&sub_id1=Bananzia-SL2UK1&aff_click_id=",
-    isMobile: true,
-    votes: 1340,
-  },
+  
   
   
   

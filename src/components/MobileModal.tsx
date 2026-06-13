@@ -57,7 +57,7 @@ export default function MobileModal() {
                 Mobile Exclusive
               </div>
               <h2 className="text-4xl font-bold text-white uppercase tracking-tight mb-4 font-serif">
-                Elite <span className="text-gold">Mobile</span> Selection
+                New Instant <span className="text-gold">Withdrawal</span> Casinos June 2026
               </h2>
               <p className="text-white/40 text-sm font-medium">Hand-picked premium experiences for your device</p>
             </div>

@@ -61,13 +61,13 @@ export default function BrandCard({ brand, gclid, rank, compact }: BrandCardProp
         </div>
 
         <div className={`flex-grow flex items-center justify-center ${compact ? 'mb-8' : 'mb-12'}`}>
-          <div className={`relative w-full aspect-video ${compact ? 'max-w-[140px]' : 'max-w-[200px]'} flex items-center justify-center`}>
+          <div className={`relative w-full aspect-video ${compact ? 'max-w-[180px]' : 'max-w-[240px]'} flex items-center justify-center`}>
             <div className="absolute inset-0 bg-gold/5 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
             <Image 
               src={brand.logo} 
               alt={brand.name} 
-              width={compact ? 100 : 140} 
-              height={compact ? 100 : 140} 
+              width={compact ? 160 : 180} 
+              height={compact ? 160 : 180} 
               className="object-contain relative z-10 filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)] group-hover:scale-110 transition-transform duration-700"
             />
           </div>
