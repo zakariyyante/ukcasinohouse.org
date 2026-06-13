@@ -2,7 +2,7 @@ import LegalLayout from "@/components/legal/LegalLayout";
 
 export default function AboutPage() {
   return (
-    <LegalLayout title="Our Heritage" subtitle="About UK Casino House">
+    <LegalLayout title="About Us" subtitle="About UK Casino House">
       <p>
         UK Casino House was established with a singular vision: to provide the most discerning players in the United Kingdom with a curated directory of elite online gaming establishments. In an industry often crowded with mediocre options, we stand as a beacon of excellence, vetting every house with a rigorous 50-point inspection protocol.
       </p>

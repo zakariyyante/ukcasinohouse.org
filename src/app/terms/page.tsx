@@ -2,7 +2,7 @@ import LegalLayout from "@/components/legal/LegalLayout";
 
 export default function TermsPage() {
   return (
-    <LegalLayout title="Terms" subtitle="Terms of Service">
+    <LegalLayout title="Terms of Service" subtitle="Terms of Service">
       <p>
         By accessing the website at ukcasinohouse.org, you are agreeing to be bound by these terms of service and all applicable laws and regulations in the United Kingdom.
       </p>

@@ -2,7 +2,7 @@ import LegalLayout from "@/components/legal/LegalLayout";
 
 export default function DisclosurePage() {
   return (
-    <LegalLayout title="Disclosure" subtitle="Affiliate Transparency">
+    <LegalLayout title="Affiliate Disclosure" subtitle="Affiliate Transparency">
       <p>
         Transparency is a cornerstone of the trust we build with our members. In accordance with the Federal Trade Commission (FTC) guidelines and UK advertising standards, this page outlines our financial relationships with the brands featured on UK Casino House.
       </p>

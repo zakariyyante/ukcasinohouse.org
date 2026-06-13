@@ -2,7 +2,7 @@ import LegalLayout from "@/components/legal/LegalLayout";
 
 export default function PrivacyPage() {
   return (
-    <LegalLayout title="Privacy" subtitle="Data Protection Policy">
+    <LegalLayout title="Privacy Policy" subtitle="Data Protection Policy">
       <p>
         At UK Casino House, we are committed to protecting your personal information and your right to privacy. This policy outlines how we collect, use, and safeguard your data when you visit our platform.
       </p>

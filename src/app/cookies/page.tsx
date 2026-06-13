@@ -2,7 +2,7 @@ import LegalLayout from "@/components/legal/LegalLayout";
 
 export default function CookiesPage() {
   return (
-    <LegalLayout title="Cookies" subtitle="Cookie Policy">
+    <LegalLayout title="Cookie Policy" subtitle="Cookie Policy">
       <p>
         This Cookie Policy explains how UK Casino House uses cookies and similar technologies to recognize you when you visit our platform.
       </p>

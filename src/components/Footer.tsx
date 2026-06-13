@@ -29,16 +29,16 @@ export default function Footer() {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-12 mb-16 border-y border-white/5 py-16">
           <div className="col-span-2 md:col-span-1">
-            <h4 className="text-gold font-bold uppercase tracking-[0.2em] text-xs mb-8">Navigation</h4>
+            <h4 className="text-gold font-bold uppercase tracking-[0.2em] text-xs mb-8">Quick Links</h4>
             <ul className="space-y-4">
               <li><Link href="/" className="text-white/40 hover:text-white transition-colors text-sm font-medium">Home</Link></li>
-              <li><Link href="/#brands" className="text-white/40 hover:text-white transition-colors text-sm font-medium">Elite Brands</Link></li>
+              <li><Link href="/#brands" className="text-white/40 hover:text-white transition-colors text-sm font-medium">Brands</Link></li>
               <li><Link href="/about" className="text-white/40 hover:text-white transition-colors text-sm font-medium">About Us</Link></li>
               <li><Link href="/contact" className="text-white/40 hover:text-white transition-colors text-sm font-medium">Contact Us</Link></li>
             </ul>
           </div>
           <div>
-            <h4 className="text-gold font-bold uppercase tracking-[0.2em] text-xs mb-8">Legal Affairs</h4>
+            <h4 className="text-gold font-bold uppercase tracking-[0.2em] text-xs mb-8">Legal</h4>
             <ul className="space-y-4">
               <li><Link href="/privacy" className="text-white/40 hover:text-white transition-colors text-sm font-medium">Privacy Policy</Link></li>
               <li><Link href="/terms" className="text-white/40 hover:text-white transition-colors text-sm font-medium">Terms of Service</Link></li>
@@ -47,7 +47,7 @@ export default function Footer() {
             </ul>
           </div>
           <div className="col-span-2">
-            <h4 className="text-gold font-bold uppercase tracking-[0.2em] text-xs mb-8">Regulatory Disclosure</h4>
+            <h4 className="text-gold font-bold uppercase tracking-[0.2em] text-xs mb-8">Disclaimer</h4>
             <p className="text-white/30 text-xs leading-relaxed font-medium">
               UK Casino House operates as an independent reviewer and affiliate. We receive compensation from the brands featured on this platform, which may influence their positioning. Our evaluations are strictly based on professional standards and real-world testing. We are not a gambling operator. Please verify local regulations and age requirements before engaging in any gambling activities.
             </p>

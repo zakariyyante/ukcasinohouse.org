@@ -17,10 +17,10 @@ export default function Header() {
   }, []);
 
   const navLinks = [
-    { name: "Collection", href: "#brands" },
-    { name: "The Guide", href: "#guide" },
-    { name: "Heritage", href: "/about" },
-    { name: "Concierge", href: "/contact" },
+    { name: "Brands", href: "#brands" },
+    { name: "Guide", href: "#guide" },
+    { name: "About Us", href: "/about" },
+    { name: "Contact Us", href: "/contact" },
   ];
 
   return (

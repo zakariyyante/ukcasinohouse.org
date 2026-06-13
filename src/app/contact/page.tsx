@@ -2,7 +2,7 @@ import LegalLayout from "@/components/legal/LegalLayout";
 
 export default function ContactPage() {
   return (
-    <LegalLayout title="Concierge" subtitle="Contact Our Team">
+    <LegalLayout title="Contact Us" subtitle="Contact Our Team">
       <p>
         At UK Casino House, we pride ourselves on providing a premium experience for our members. Whether you have a question about a specific house, need assistance with our platform, or are interested in a bespoke partnership, our concierge team is here to assist you.
       </p>
