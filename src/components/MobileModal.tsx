@@ -70,6 +70,7 @@ export default function MobileModal() {
                     brand={brand} 
                     gclid={gclid} 
                     rank={index < 3 ? index : undefined} 
+                    compact={true}
                   />
                 ))}
               </div>

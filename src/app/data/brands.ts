@@ -10,41 +10,41 @@ export interface Brand {
 }
 
 export const brands: Brand[] = [
-  // {
-  //   id: "spinpolo",
-  //   name: "SpinPolo",
-  //   logo: "/brands/spinpolo.webp",
-  //   rating: 9.0,
-  //   bonus: "777% Up To £7777 + 385FS + 300k Chips",
-  //   url: "https://direct.reradirectbox.com/click?pid=75&offer_id=857&l=1778754174&sub2=SpinPolo-SL2UK1&sub1=",
-  //   isMobile: true,
-  //   votes: 1105,
-  // },
+  {
+    id: "spinpolo",
+    name: "SpinPolo",
+    logo: "/brands/spinpolo.webp",
+    rating: 9.0,
+    bonus: "777% Up To £7777 + 385FS + 300k Chips",
+    url: "https://direct.reradirectbox.com/click?pid=75&offer_id=857&l=1778754174&sub2=SpinPolo-SL2UK1&sub1=",
+    isMobile: true,
+    votes: 1105,
+  },
   
-  // {
-  //   id: "bananzia",
-  //   name: "Bananzia",
-  //   logo: "/brands/bananzia.svg",
-  //   rating: 9.2,
-  //   bonus: "Casino Welcome Bonus 300% up to £3000 + 300 FS!",
-  //   url: "https://bestcpa.online/click?o=510&a=36&link_id=818&sub_id1=Bananzia-SL2UK1&aff_click_id=",
-  //   isMobile: true,
-  //   votes: 1340,
-  // },
-  
-  
+  {
+    id: "bananzia",
+    name: "Bananzia",
+    logo: "/brands/bananzia.svg",
+    rating: 9.2,
+    bonus: "Casino Welcome Bonus 300% up to £3000 + 300 FS!",
+    url: "https://bestcpa.online/click?o=510&a=36&link_id=818&sub_id1=Bananzia-SL2UK1&aff_click_id=",
+    isMobile: true,
+    votes: 1340,
+  },
   
   
-  // {
-  //   id: "daytonaspin",
-  //   name: "DaytonaSpin",
-  //   logo: "/brands/daytonaspin.svg",
-  //   rating: 9.2,
-  //   bonus: "255% Up To 4500 £ + 255 FS",
-  //   url: "https://bestcpa.online/click?o=380&a=75&sub_id1=DaytonaSpin-SL2UK1&aff_click_id=",
-  //   isMobile: true,
-  //   votes: 1340,
-  // },
+  
+  
+  {
+    id: "daytonaspin",
+    name: "DaytonaSpin",
+    logo: "/brands/daytonaspin.svg",
+    rating: 9.2,
+    bonus: "255% Up To 4500 £ + 255 FS",
+    url: "https://bestcpa.online/click?o=380&a=75&sub_id1=DaytonaSpin-SL2UK1&aff_click_id=",
+    isMobile: true,
+    votes: 1340,
+  },
   
   {
     id: "grosvenor-casinos",
