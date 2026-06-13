@@ -1,26 +1,71 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
+@theme {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-card-bg: var(--card-bg);
+  --color-primary: var(--primary);
+  --color-accent: var(--accent);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: #0f051d;
+  --foreground: #ffffff;
+  --card-bg: #1a0b2e;
+  --primary: #ff8c00;
+  --accent: #ffd700;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .gold-text {
+    @apply bg-clip-text text-transparent bg-linear-to-r from-yellow-400 via-yellow-200 to-yellow-500;
+  }
+
+  .casino-card-bg {
+    @apply bg-[var(--card-bg)] border border-white/10 rounded-xl overflow-hidden;
+  }
+
+  .felt-texture {
+    background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+
+  .casino-glow {
+    box-shadow: 0 0 20px rgba(255, 140, 0, 0.2);
+  }
+
+  .gold-shimmer {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .gold-shimmer::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      to bottom right,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0) 40%,
+      rgba(255, 255, 255, 0.4) 50%,
+      rgba(255, 255, 255, 0) 60%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(45deg);
+    animation: shimmer 3s infinite;
+  }
+
+  @keyframes shimmer {
+    0% { transform: translateX(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) rotate(45deg); }
+  }
 }
