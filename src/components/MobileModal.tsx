@@ -48,7 +48,7 @@ export default function MobileModal() {
           </svg>
         </button>
 
-        <Header />
+        <Header hideLogo={true} />
         
         <main className="flex-grow">
           <div className="pt-10 pb-20">

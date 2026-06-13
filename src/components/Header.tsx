@@ -4,7 +4,11 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-export default function Header() {
+interface HeaderProps {
+  hideLogo?: boolean;
+}
+
+export default function Header({ hideLogo }: HeaderProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -26,17 +30,21 @@ export default function Header() {
   return (
     <header className={`fixed top-0 z-50 w-full transition-all duration-500 ${scrolled ? 'bg-background/80 backdrop-blur-2xl py-4 border-b border-white/5' : 'bg-transparent py-8'}`}>
       <div className="container mx-auto px-4 flex items-center justify-between">
-        <Link href="/" className="flex items-center group transition-transform duration-500 hover:scale-105">
-          <div className="relative w-[180px] md:w-[240px] h-[40px] md:h-[50px]">
-            <Image 
-              src="/logo.png" 
-              alt="UK Casino House" 
-              fill 
-              className="object-contain"
-              priority
-            />
-          </div>
-        </Link>
+        {!hideLogo ? (
+          <Link href="/" className="flex items-center group transition-transform duration-500 hover:scale-105">
+            <div className="relative w-[180px] md:w-[240px] h-[40px] md:h-[50px]">
+              <Image 
+                src="/logo.png" 
+                alt="UK Casino House" 
+                fill 
+                className="object-contain"
+                priority
+              />
+            </div>
+          </Link>
+        ) : (
+          <div className="w-[180px] md:w-[240px] h-[40px] md:h-[50px]"></div>
+        )}
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center gap-12">
