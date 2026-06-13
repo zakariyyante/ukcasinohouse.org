@@ -18,81 +18,94 @@ export default function BrandCard({ brand, gclid, rank }: BrandCardProps) {
 
   const handleCardClick = () => {
     const finalUrl = buildUrl(brand.url, gclid);
-    
-    // Track Vercel Analytics
     track("Brand Click", { brand: brand.name });
-
-    // Track Google Ads Conversion
     if (typeof window !== "undefined" && (window as any).gtag_report_conversion) {
       (window as any).gtag_report_conversion(finalUrl);
     }
-
     window.open(finalUrl, "_blank");
   };
 
-  const getRankBadge = (rank?: number) => {
-    if (rank === 0) return <div className="absolute -top-3 -left-3 bg-[#b8860b] text-white font-black px-4 py-1.5 rounded-lg z-10 shadow-[0_4px_20px_rgba(184,134,11,0.4)] font-serif italic">#1 Elite</div>;
-    if (rank === 1) return <div className="absolute -top-3 -left-3 bg-slate-400 text-white font-black px-4 py-1.5 rounded-lg z-10 shadow-lg font-serif italic">#2 Prestige</div>;
-    if (rank === 2) return <div className="absolute -top-3 -left-3 bg-[#8b4513] text-white font-black px-4 py-1.5 rounded-lg z-10 shadow-lg font-serif italic">#3 Select</div>;
-    return null;
+  const getRankLabel = (rank?: number) => {
+    if (rank === 0) return "The Premier Choice";
+    if (rank === 1) return "Highly Commended";
+    if (rank === 2) return "Executive Selection";
+    return "Verified Partner";
   };
 
   return (
     <div 
       onClick={handleCardClick}
-      className="casino-card-bg relative group cursor-pointer transition-all duration-500 hover:scale-[1.03] hover:casino-glow flex flex-col h-full border-white/5 hover:border-gold/30"
+      className="group relative flex flex-col h-full cursor-pointer"
     >
-      {getRankBadge(rank)}
+      {/* Background Layer */}
+      <div className="absolute inset-0 bg-white/[0.02] border border-white/5 rounded-[2.5rem] transition-all duration-500 group-hover:bg-white/[0.04] group-hover:border-gold/30 group-hover:premium-glow"></div>
       
-      {/* Elegant border accents */}
-      <div className="absolute top-4 right-4 w-4 h-4 border-t border-r border-gold/20"></div>
-      <div className="absolute bottom-4 left-4 w-4 h-4 border-b border-l border-gold/20"></div>
+      {/* Content Layer */}
+      <div className="relative p-8 md:p-10 flex flex-col h-full z-10">
+        <div className="flex justify-between items-start mb-10">
+          <div className="flex flex-col">
+            <span className="text-[10px] uppercase tracking-[0.3em] text-gold font-black mb-2">
+              {getRankLabel(rank)}
+            </span>
+            <h3 className="text-3xl font-bold text-white font-serif tracking-tight group-hover:gold-text transition-all duration-500">
+              {brand.name}
+            </h3>
+          </div>
+          <div className="flex items-center gap-2 bg-white/[0.05] px-3 py-1.5 rounded-full border border-white/5">
+            <span className="text-gold text-sm font-black">★</span>
+            <span className="text-white text-xs font-black tracking-tighter">{brand.rating.toFixed(1)}</span>
+          </div>
+        </div>
 
-      <div className="p-8 flex flex-col h-full">
-        <div className="flex flex-col items-center text-center mb-8">
-          <div className="relative w-32 h-32 bg-white/[0.02] rounded-2xl flex items-center justify-center p-4 mb-6 border border-white/5 group-hover:border-gold/20 transition-colors">
+        <div className="flex-grow flex items-center justify-center mb-12">
+          <div className="relative w-full aspect-video max-w-[200px] flex items-center justify-center">
+            <div className="absolute inset-0 bg-gold/5 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
             <Image 
               src={brand.logo} 
               alt={brand.name} 
-              width={100} 
-              height={100} 
-              className="object-contain filter drop-shadow-md"
+              width={140} 
+              height={140} 
+              className="object-contain relative z-10 filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)] group-hover:scale-110 transition-transform duration-700"
             />
-          </div>
-          <h3 className="text-2xl font-bold text-white group-hover:text-gold transition-colors font-serif mb-2">
-            {brand.name}
-          </h3>
-          <div className="flex items-center gap-3">
-            <div className="flex text-gold">
-              {[...Array(5)].map((_, i) => (
-                <svg key={i} className={`w-4 h-4 ${i < Math.floor(brand.rating / 2) ? 'fill-current' : 'fill-white/10'}`} viewBox="0 0 20 20">
-                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                </svg>
-              ))}
-            </div>
-            <span className="text-sm font-bold text-gold/80">{brand.rating.toFixed(1)}/10</span>
           </div>
         </div>
 
-        <div className="flex-grow flex flex-col justify-center mb-8">
+        <div className="space-y-8">
           <div className="text-center">
-            <p className="text-xs uppercase tracking-[0.2em] text-white/30 font-bold mb-2">Exclusive Offer</p>
-            <p className="text-lg font-serif font-bold text-white/90 leading-snug">
+            <p className="text-[10px] uppercase tracking-[0.4em] text-white/20 font-bold mb-4">Member Benefits</p>
+            <p className="text-xl font-serif font-medium text-white/80 leading-snug min-h-[3.5rem] flex items-center justify-center">
               {brand.bonus}
             </p>
           </div>
-        </div>
 
-        <button 
-          className="w-full py-5 bg-linear-to-r from-[#8b0000] to-[#b22222] text-white font-bold uppercase tracking-[0.2em] rounded-xl shadow-2xl shadow-primary/20 group-hover:shadow-primary/40 transition-all gold-shimmer border border-white/10"
-        >
-          Claim Invitation
-        </button>
-        
-        <p className="text-[10px] text-center text-white/20 mt-4 uppercase tracking-widest font-bold">
-          {brand.votes.toLocaleString()} Verified Members
-        </p>
+          <div className="relative pt-8 border-t border-white/5">
+            <button 
+              className="w-full py-5 bg-white text-black font-black uppercase tracking-[0.2em] text-xs rounded-2xl transition-all duration-500 group-hover:bg-gold group-hover:text-white gold-shimmer shadow-xl"
+            >
+              Claim Invitation
+            </button>
+            
+            <div className="flex justify-between items-center mt-6 px-2">
+              <div className="flex -space-x-2">
+                {[1, 2, 3].map((i) => (
+                  <div key={i} className="w-6 h-6 rounded-full border-2 border-[#000814] bg-white/10 flex items-center justify-center text-[8px] font-bold text-white/40">
+                    {i}
+                  </div>
+                ))}
+                <div className="pl-4 text-[9px] font-bold text-white/20 uppercase tracking-widest flex items-center">
+                  {brand.votes.toLocaleString()} Active
+                </div>
+              </div>
+              <div className="text-[9px] font-bold text-gold/40 uppercase tracking-widest">
+                UKGC Verified
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+
+      {/* Decorative corner accent */}
+      <div className="absolute top-6 right-6 w-2 h-2 rounded-full bg-gold/20 group-hover:bg-gold group-hover:animate-ping transition-all"></div>
     </div>
   );
 }

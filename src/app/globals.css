@@ -11,18 +11,19 @@
 }
 
 :root {
-  --background: #000a1a;
+  --background: #000814;
   --foreground: #ffffff;
-  --card-bg: #00152b;
-  --primary: #8b0000; /* Deep Red */
-  --accent: #001a3d;  /* Dark Navy */
-  --gold: #b8860b;    /* Gold/Bronze */
+  --card-bg: rgba(255, 255, 255, 0.03);
+  --primary: #9b0000; /* Sophisticated Crimson */
+  --accent: #001226;  /* Deep Midnight */
+  --gold: #c5a059;    /* Refined Champagne Gold */
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
 }
 
 h1, h2, h3, h4, .serif-font {
@@ -31,20 +32,40 @@ h1, h2, h3, h4, .serif-font {
 
 @layer utilities {
   .gold-text {
-    @apply bg-clip-text text-transparent bg-linear-to-r from-[#b8860b] via-[#ffd700] to-[#8b4513];
+    @apply bg-clip-text text-transparent bg-linear-to-br from-[#c5a059] via-[#f3e5ab] to-[#8e6d2f];
   }
 
-  .casino-card-bg {
-    @apply bg-[var(--card-bg)] border border-white/5 rounded-xl overflow-hidden;
+  .glass-card {
+    @apply bg-white/[0.03] backdrop-blur-xl border border-white/10 rounded-[2rem];
+  }
+
+  .premium-border {
+    position: relative;
+  }
+
+  .premium-border::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(to bottom right, rgba(197, 160, 89, 0.3), transparent, rgba(155, 0, 0, 0.2));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
   }
 
   .felt-texture {
-    background-image: radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.02) 1px, transparent 0);
-    background-size: 24px 24px;
+    background-image: 
+      radial-gradient(circle at 2px 2px, rgba(255, 255, 255, 0.01) 1px, transparent 0),
+      linear-gradient(to bottom, rgba(0, 8, 20, 0.8), rgba(0, 8, 20, 0.95));
+    background-size: 32px 32px, 100% 100%;
   }
 
-  .casino-glow {
-    box-shadow: 0 0 30px rgba(184, 134, 11, 0.15);
+  .premium-glow {
+    box-shadow: 0 0 50px -10px rgba(197, 160, 89, 0.15);
   }
 
   .gold-shimmer {
@@ -55,24 +76,41 @@ h1, h2, h3, h4, .serif-font {
   .gold-shimmer::after {
     content: "";
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
+    top: -100%;
+    left: -100%;
+    width: 300%;
+    height: 300%;
     background: linear-gradient(
-      to bottom right,
+      45deg,
       rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0) 40%,
-      rgba(255, 255, 255, 0.2) 50%,
-      rgba(255, 255, 255, 0) 60%,
+      rgba(255, 255, 255, 0) 45%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0) 55%,
       rgba(255, 255, 255, 0) 100%
     );
-    transform: rotate(45deg);
-    animation: shimmer 4s infinite;
+    animation: shimmer 6s infinite linear;
   }
 
   @keyframes shimmer {
-    0% { transform: translateX(-100%) rotate(45deg); }
-    100% { transform: translateX(100%) rotate(45deg); }
+    0% { transform: translate(-30%, -30%) rotate(0deg); }
+    100% { transform: translate(30%, 30%) rotate(0deg); }
+  }
+
+  .reveal-up {
+    animation: revealUp 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+
+  @keyframes revealUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
   }
 }
